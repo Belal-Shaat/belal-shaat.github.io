@@ -25,15 +25,18 @@
 <picture>
   <source
     media="(prefers-color-scheme: dark)"
-    srcset="https://raw.githubusercontent.com/Belal-Shaat/Belal-Shaat/output/github-snake-dark.svg"
+    srcset="https://raw.githubusercontent.com/Belal-Shaat/belal-shaat.github.io/717e76e4f365af7ca996bb8cd066eaa7cd1780c0/github-snake.svg"
+  
+    
   />
   <source
     media="(prefers-color-scheme: light)"
-    srcset="https://raw.githubusercontent.com/Belal-Shaat/Belal-Shaat/output/github-snake.svg"
+    srcset="https://raw.githubusercontent.com/Belal-Shaat/belal-shaat.github.io/717e76e4f365af7ca996bb8cd066eaa7cd1780c0/github-snake.svg"
+    
   />
   <img
     alt="github contribution grid snake animation"
-    src="https://raw.githubusercontent.com/Belal-Shaat/Belal-Shaat/output/github-snake.svg"
+    src="https://raw.githubusercontent.com/Belal-Shaat/belal-shaat.github.io/717e76e4f365af7ca996bb8cd066eaa7cd1780c0/github-snake.svg"
   />
 </picture>
 </div>
