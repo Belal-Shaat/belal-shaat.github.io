@@ -1,239 +1,226 @@
-<!DOCTYPE html>
-<html lang="en">
+.<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belal Shaat | Software Engineer</title>
+    <title>Belal Shaat | Software Engineer & .NET Specialist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        dark: {
+                            900: '#090d16',
+                            800: '#0f172a',
+                            700: '#1e293b',
+                            600: '#334155',
+                        },
+                        cyanGlow: '#38bdf8',
+                        accentBlue: '#0284c7',
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px -5px rgba(56, 189, 248, 0.3)',
+                        'glow-lg': '0 0 35px -5px rgba(56, 189, 248, 0.4)',
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent: #38bdf8;
-            --accent-hover: #0284c7;
-            --border: #334155;
+        /* Custom Glowing & Subtle Animation Utilities */
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        .glass-card:hover {
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.25);
         }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            padding: 2rem 1rem;
+        .text-glow {
+            text-shadow: 0 0 12px rgba(56, 189, 248, 0.5);
         }
-
-        .container {
-            max-width: 720px;
-            margin: 0 auto;
-        }
-
-        /* Header / Hero */
-        header {
-            margin-bottom: 3rem;
-        }
-
-        .profile-title {
-            font-size: 2.25rem;
-            font-weight: 700;
-            letter-spacing: -0.025em;
-            color: var(--text-main);
-        }
-
-        .profile-subtitle {
-            font-size: 1.2rem;
-            color: var(--accent);
-            margin-top: 0.25rem;
-            font-weight: 500;
-        }
-
-        .profile-bio {
-            margin-top: 1rem;
-            color: var(--text-muted);
-            font-size: 1.05rem;
-        }
-
-        /* Sections */
-        section {
-            margin-bottom: 3rem;
-        }
-
-        h2 {
-            font-size: 1.25rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 0.5rem;
-        }
-
-        /* Skills Badges */
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .skill-badge {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border);
-            color: var(--text-main);
-            padding: 0.35rem 0.85rem;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        /* Projects */
-        .projects-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-        }
-
-        .project-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1.25rem;
-            transition: transform 0.2s ease, border-color 0.2s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-2px);
-            border-color: var(--accent);
-        }
-
-        .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.5rem;
-        }
-
-        .project-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--text-main);
-            text-decoration: none;
-        }
-
-        .project-title:hover {
-            color: var(--accent);
-        }
-
-        .project-desc {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* Contact & Links */
-        .links {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background-color: var(--card-bg);
-            color: var(--text-main);
-            border: 1px solid var(--border);
-            padding: 0.6rem 1.2rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: all 0.2s ease;
-        }
-
-        .btn:hover {
-            background-color: var(--accent);
-            color: #0f172a;
-            border-color: var(--accent);
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            margin-top: 4rem;
-            color: var(--text-muted);
-            font-size: 0.85rem;
+        /* Background Ambient Glow */
+        .bg-glow-1 {
+            position: absolute;
+            top: -10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, rgba(15, 23, 42, 0) 70%);
+            pointer-events: none;
+            z-index: 0;
         }
     </style>
 </head>
-<body>
+<body class="bg-dark-900 text-slate-100 font-sans antialiased min-h-screen relative overflow-x-hidden selection:bg-cyanGlow selection:text-dark-900">
 
-    <div class="container">
-        
-        <!-- Header / Hero Section -->
-        <header>
-            <h1 class="profile-title">Belal Shaat</h1>
-            <p class="profile-subtitle">Software Engineer / .NET Specialist</p>
-            <p class="profile-bio">
-                Passionate about building scalable backend systems, robust APIs, and modern architecture. Focused on writing clean, efficient code and continuous learning.
-            </p>
+    <!-- Ambient Glowing Effect -->
+    <div class="bg-glow-1"></div>
+
+    <div class="max-w-4xl mx-auto px-6 py-12 md:py-20 relative z-10">
+
+        <!-- Navigation Bar / Status -->
+        <header class="flex justify-between items-center mb-16">
+            <div class="flex items-center space-x-2">
+                <span class="relative flex h-3 w-3">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-cyan-500"></span>
+                </span>
+                <span class="font-mono text-xs text-slate-400 uppercase tracking-widest">Available for new challenges</span>
+            </div>
+            <a href="mailto:belal.shaat@gmail.com" class="font-mono text-xs text-cyanGlow hover:underline">belalshaat.site</a>
         </header>
 
+        <!-- Hero Section -->
+        <section class="mb-20">
+            <div class="inline-block px-3 py-1 mb-4 text-xs font-mono rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-400">
+                Software Engineer & .NET Specialist
+            </div>
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6">
+                Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyanGlow via-sky-300 to-blue-500 text-glow">Belal Shaat</span>.
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl font-light">
+                I build high-performance, scalable backend systems and robust APIs using <span class="text-white font-medium">.NET</span>. Passionate about modern clean architecture, decentralized technologies (<span class="text-cyanGlow font-mono text-sm">AT Protocol</span>), and autonomous agentic AI integrations.
+            </p>
+        </section>
+
         <!-- Tech Stack Section -->
-        <section>
-            <h2>Tech Stack</h2>
-            <div class="skills-grid">
-                <span class="skill-badge">C#</span>
-                <span class="skill-badge">.NET Core / ASP.NET</span>
-                <span class="skill-badge">REST APIs</span>
-                <span class="skill-badge">SQL Server</span>
-                <span class="skill-badge">Entity Framework</span>
-                <span class="skill-badge">Git & GitHub</span>
-                <span class="skill-badge">CI/CD</span>
-                <span class="skill-badge">System Design</span>
+        <section class="mb-20">
+            <div class="flex items-center space-x-3 mb-8">
+                <h2 class="font-mono text-xs uppercase tracking-widest text-slate-400">Tech Stack & Expertise</h2>
+                <div class="h-[1px] flex-grow bg-dark-700"></div>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                <!-- Skill Badges -->
+                <div class="glass-card p-3 rounded-lg flex items-center space-x-3 transition-all duration-300">
+                    <span class="text-cyanGlow font-mono text-sm font-bold">&gt;_</span>
+                    <span class="text-sm font-medium text-slate-200">C# / .NET 9</span>
+                </div>
+                <div class="glass-card p-3 rounded-lg flex items-center space-x-3 transition-all duration-300">
+                    <span class="text-cyanGlow font-mono text-sm font-bold">&gt;_</span>
+                    <span class="text-sm font-medium text-slate-200">ASP.NET Core</span>
+                </div>
+                <div class="glass-card p-3 rounded-lg flex items-center space-x-3 transition-all duration-300">
+                    <span class="text-cyanGlow font-mono text-sm font-bold">&gt;_</span>
+                    <span class="text-sm font-medium text-slate-200">REST APIs & XRPC</span>
+                </div>
+                <div class="glass-card p-3 rounded-lg flex items-center space-x-3 transition-all duration-300">
+                    <span class="text-cyanGlow font-mono text-sm font-bold">&gt;_</span>
+                    <span class="text-sm font-medium text-slate-200">SQL Server</span>
+                </div>
+                <div class="glass-card p-3 rounded-lg flex items-center space-x-3 transition-all duration-300">
+                    <span class="text-cyanGlow font-mono text-sm font-bold">&gt;_</span>
+                    <span class="text-sm font-medium text-slate-200">Entity Framework</span>
+                </div>
+                <div class="glass-card p-3 rounded-lg flex items-center space-x-3 transition-all duration-300">
+                    <span class="text-cyanGlow font-mono text-sm font-bold">&gt;_</span>
+                    <span class="text-sm font-medium text-slate-200">System Architecture</span>
+                </div>
+                <div class="glass-card p-3 rounded-lg flex items-center space-x-3 transition-all duration-300">
+                    <span class="text-cyanGlow font-mono text-sm font-bold">&gt;_</span>
+                    <span class="text-sm font-medium text-slate-200">AT Protocol</span>
+                </div>
+                <div class="glass-card p-3 rounded-lg flex items-center space-x-3 transition-all duration-300">
+                    <span class="text-cyanGlow font-mono text-sm font-bold">&gt;_</span>
+                    <span class="text-sm font-medium text-slate-200">GitHub Actions</span>
+                </div>
             </div>
         </section>
 
         <!-- Featured Projects Section -->
-        <section>
-            <h2>Projects</h2>
-            <div class="projects-list">
-                
-                <div class="project-card">
-                    <div class="project-header">
-                        <a href="https://github.com" target="_blank" class="project-title">EduMatrix ↗</a>
+        <section class="mb-20">
+            <div class="flex items-center space-x-3 mb-8">
+                <h2 class="font-mono text-xs uppercase tracking-widest text-slate-400"> <!-- Project 1 --></h2>
+                <div class="h-[1px] flex-grow bg-dark-700"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Project 1 -->
+                <div class="glass-card p-6 rounded-xl flex flex-col justify-between transition-all duration-300 group">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="font-mono text-xs text-cyanGlow"> <!-- Project 1 --></span>
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors">
+                                <svg class="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            </a>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyanGlow transition-colors"> <!-- Project 1 --></h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                         <!-- Project 1 -->
+                        </p>
                     </div>
-                    <p class="project-desc">An educational management platform built with .NET, focusing on automated workflows and structured data processing.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 bg-dark-900 border border-slate-700/50 rounded text-xs font-mono text-slate-300">.NET Core</span>
+                        <span class="px-2.5 py-1 bg-dark-900 border border-slate-700/50 rounded text-xs font-mono text-slate-300">EF Core</span>
+                        <span class="px-2.5 py-1 bg-dark-900 border border-slate-700/50 rounded text-xs font-mono text-slate-300">SQL Server</span>
+                    </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-header">
-                        <a href="https://github.com" target="_blank" class="project-title">AT Protocol (.NET) ↗</a>
+                <!-- Project 2 -->
+                <div class="glass-card p-6 rounded-xl flex flex-col justify-between transition-all duration-300 group">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="font-mono text-xs text-cyanGlow"> <!-- Project 2 --></span>
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors">
+                                <svg class="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            </a>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyanGlow transition-colors"><!-- Project 2 --></h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                          <!-- Project 2 -->
+                        </p>
                     </div>
-                    <p class="project-desc">Experiments and client implementations for decentralized social network protocols using C# and Web APIs.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 bg-dark-900 border border-slate-700/50 rounded text-xs font-mono text-slate-300">C#</span>
+                        <span class="px-2.5 py-1 bg-dark-900 border border-slate-700/50 rounded text-xs font-mono text-slate-300">XRPC</span>
+                        <span class="px-2.5 py-1 bg-dark-900 border border-slate-700/50 rounded text-xs font-mono text-slate-300">Cryptography</span>
+                    </div>
                 </div>
-
             </div>
         </section>
 
-        <!-- Connect Section -->
-        <section>
-            <h2>Connect</h2>
-            <div class="links">
-                <a href="https://github.com" target="_blank" class="btn">GitHub</a>
-                <a href="https://linkedin.com" target="_blank" class="btn">LinkedIn</a>
-                <a href="mailto:your-email@example.com" class="btn">Email Me</a>
+        <!-- Connect / Contact Section -->
+        <section class="mb-20">
+            <div class="flex items-center space-x-3 mb-8">
+                <h2 class="font-mono text-xs uppercase tracking-widest text-slate-400">Get In Touch</h2>
+                <div class="h-[1px] flex-grow bg-dark-700"></div>
+            </div>
+
+            <div class="glass-card p-8 rounded-2xl text-center relative overflow-hidden">
+                <h3 class="text-2xl font-bold text-white mb-3">Let's build something great together.</h3>
+                <p class="text-slate-400 text-sm max-w-md mx-auto mb-8">
+                    Whether you have a question about .NET backend systems, decentralized protocols, or just want to connect, my inbox is always open.
+                </p>
+
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="mailto:belal.shaat+dev@gmail.com" class="px-6 py-3 bg-cyanGlow text-dark-900 font-semibold rounded-lg hover:bg-cyan-300 shadow-glow transition-all duration-300 flex items-center space-x-2 text-sm">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 002-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <span>Send Email</span>
+                    </a>
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-dark-800 border border-slate-700 text-slate-200 hover:text-white hover:border-cyanGlow rounded-lg transition-all duration-300 flex items-center space-x-2 text-sm">
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-dark-800 border border-slate-700 text-slate-200 hover:text-white hover:border-cyanGlow rounded-lg transition-all duration-300 flex items-center space-x-2 text-sm">
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
             </div>
         </section>
 
         <!-- Footer -->
-        <footer>
-            <p>© 2026 Belal Shaat. All rights reserved.</p>
+        <footer class="text-center font-mono text-xs text-slate-500 border-t border-dark-800 pt-8">
+            <p>© 2026 Belal Shaat. Designed & Built with .NET precision.</p>
         </footer>
 
     </div>
