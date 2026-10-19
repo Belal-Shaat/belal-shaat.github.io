@@ -1,42 +1,31 @@
-<h1 align="center">Hi 👋, I'm Belal Shaat</h1>
+# Belal Shaat — Personal Portfolio
 
-<p align="center"> 
-  <img src="https://img.shields.io/badge/Flutter-blue?style=flat&logo=flutter&logoColor=white&logoWidth=20"/>
-  <img src="https://img.shields.io/badge/Dart-1F4B6E?style=flat&logo=dart&logoColor=white&logoWidth=20"/>
-  <img src="https://img.shields.io/github/followers/Belal-Shaat?style=social"/>
-  <img src="https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white"/>
+Responsive bilingual personal landing page built with React, TypeScript, Vite, Tailwind CSS, and Lucide icons.
 
-  <img src="https://komarev.com/ghpvc/?username=Belal-Shaat" alt="Belal-Shaat" />
-</p>
+## Run locally
 
+```bash
+npm install
+npm run dev
+```
 
+## Production build
 
-## My GitHub Stats!!
+```bash
+npm run build
+npm run preview
+```
 
-<br>
+## Customize before publishing
 
-<p align = "center">
-  <img src = "https://github-readme-stats.vercel.app/api?username=Belal-Shaat&show_icons=true&theme=radical&line_height=27">
-  <img src = "https://github-readme-stats.vercel.app/api/top-langs/?username=Belal-Shaat&hide=css,html&theme=tokyonight">
-</p>
+1. Update the contact email in `src/App.tsx` (`hello@belalshaat.site`) to the email address you want to publish.
+2. Replace the LinkedIn placeholder URL with your real LinkedIn profile.
+3. Replace the illustrative project cards with projects you can publicly discuss, including accurate outcomes and repository/demo links.
+4. Review the wording in both English and Arabic.
+5. Update metadata in `index.html` if needed.
 
-<div align="center">
-  <h2>🐍 My Contributions 🐍</h2>
-<picture>
-  <source
-    media="(prefers-color-scheme: dark)"
-    srcset="https://raw.githubusercontent.com/Belal-Shaat/belal-shaat.github.io/717e76e4f365af7ca996bb8cd066eaa7cd1780c0/github-snake.svg"
-  
-    
-  />
-  <source
-    media="(prefers-color-scheme: light)"
-    srcset="https://raw.githubusercontent.com/Belal-Shaat/belal-shaat.github.io/717e76e4f365af7ca996bb8cd066eaa7cd1780c0/github-snake.svg"
-    
-  />
-  <img
-    alt="github contribution grid snake animation"
-    src="https://raw.githubusercontent.com/Belal-Shaat/belal-shaat.github.io/717e76e4f365af7ca996bb8cd066eaa7cd1780c0/github-snake.svg"
-  />
-</picture>
-</div>
+## Deploy to GitHub Pages
+
+If you deploy this repository to `https://belal-shaat.github.io/`, the Vite base path can remain `/`. For a project repository deployed under a subpath, configure `base` in `vite.config.ts` to match that repository path.
+
+The project cards are illustrative portfolio content, not claims that these specific projects are publicly available.
